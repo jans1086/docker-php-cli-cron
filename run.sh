@@ -4,4 +4,4 @@ chmod +x /bin/cron
 
 /bin/cron
 
-/usr/local/bin/php -a
+# /usr/local/bin/php -a
