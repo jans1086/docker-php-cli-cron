@@ -4,5 +4,6 @@ MAINTAINER ChengWei <chengwei@theqwan.com>
 WORKDIR /
 
 COPY cron /bin/cron
+COPY run.sh /run.sh
 
-CMD ["bash", "/bin/cron"]
+CMD ["bash", "/run.sh"]
