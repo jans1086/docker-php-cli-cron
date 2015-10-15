@@ -1,9 +1,8 @@
 FROM php:5.6.14-cli
 MAINTAINER ChengWei <chengwei@theqwan.com>
 
-WORKDIR /
+ADD . /prepare_install
 
-COPY cron /bin/cron
-COPY run.sh /run.sh
+RUN /prepare_install/install.sh
 
-CMD ["bash", "/run.sh"]
+CMD ["runsv", "/etc/service/cron"]
