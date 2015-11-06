@@ -9,8 +9,8 @@ RUN rm /etc/timezone \
 	&& apt-get install -y --no-install-recommends runit \
 	&& apt-get install -y --no-install-recommends cron \
 	&& mkdir /etc/service/cron \
-	&& echo "#!/bin/sh" > /etc/service/cron/run \
-	&& echo "exec /usr/sbin/cron -f" >> /etc/service/cron/run \
+	&& echo '#!/bin/sh' > /etc/service/cron/run \
+	&& echo 'exec /usr/sbin/cron -f' >> /etc/service/cron/run \
 	&& chmod -R 700 /etc/service/cron/ \
 	&& chmod 600 /etc/crontab \
 	&& rm -f /etc/cron.daily/standard \
