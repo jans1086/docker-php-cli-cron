@@ -8,7 +8,7 @@ RUN rm /etc/timezone \
 	&& apt-get update \
 	&& apt-get install -y --no-install-recommends runit \
 	&& apt-get install -y --no-install-recommends cron \
-	&& apt-get install -y vim \
+	&& apt-get install -y --no-install-recommends vim \
 	&& mkdir /etc/service/cron \
 	&& echo '#!/bin/sh' > /etc/service/cron/run \
 	&& echo 'exec /usr/sbin/cron -f' >> /etc/service/cron/run \
