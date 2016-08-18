@@ -9,6 +9,8 @@ RUN rm /etc/timezone \
 	&& apt-get install -y --no-install-recommends runit \
 	&& apt-get install -y --no-install-recommends cron \
 	&& apt-get install -y --no-install-recommends vim \
+	&& BUILD_PACKAGES="curl libcurl3 libcurl3-dev php5-curl supervisor nginx php5-fpm git php5-mysql php-apc php5-curl php5-gd php5-intl php5-mcrypt php5-memcache php5-sqlite php5-tidy php5-xmlrpc php5-xsl php5-pgsql php5-mongo php5-ldap pwgen php5-redis"  \
+        && apt-get -y install $BUILD_PACKAGES \
 	&& mkdir /etc/service/cron \
 	&& echo '#!/bin/sh' > /etc/service/cron/run \
 	&& echo 'exec /usr/sbin/cron -f' >> /etc/service/cron/run \
