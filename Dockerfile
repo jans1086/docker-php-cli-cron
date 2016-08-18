@@ -23,6 +23,7 @@ RUN rm /etc/timezone \
 	&& rm -f /etc/cron.weekly/fstrim \
 	&& apt-get purge -y --auto-remove \
 	&& apt-get clean \
-	&& rm -rf /var/lib/apt/lists/*
+	&& rm -rf /var/lib/apt/lists/* \
+	&& rm -f /usr/local/bin/php*
 
 CMD ["runsv", "/etc/service/cron"]
